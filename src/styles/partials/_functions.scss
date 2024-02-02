@@ -1,0 +1,9 @@
+@use "sass:math";
+
+@function px-to-rem($pxValue) {
+    @if ($pxValue == null) {
+        @return null;
+    }
+    $remValue: math.div($pxValue, 16);
+    @return #{$remValue}rem;
+}

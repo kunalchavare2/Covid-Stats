@@ -1,0 +1,18 @@
+@import "../../../styles/partials/variables";
+@import "../../../styles/partials/mixins";
+
+.information {
+  background-color: $secondary-bg-color;
+  overflow-y: scroll;
+
+  &.dark {
+    background-color: $primary-bg-dark-color;
+    color: $primary-text-dark-color;
+  }
+
+  @include media-query($desktop) {
+    height: 100vh;
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
+  }
+}

@@ -1,0 +1,13 @@
+@import "../../../styles/partials/functions";
+@import "../../../styles/partials/variables";
+@import "../../../styles/partials/mixins";
+
+.prevention__list--image {
+    width: 80%;
+    margin: auto;
+    border-radius: $br-30x;
+
+    @include media-query($tablet) {
+        width: 45%;
+    }
+}

@@ -1,0 +1,37 @@
+@import "../../../styles/font.scss";
+@import "../../../styles/partials/functions";
+@import "../../../styles/partials/mixins";
+@import "../../../styles/partials/variables";
+
+.dashboard__countrylist {
+    padding:20px;
+    overflow-y: scroll;
+    background-color: $background-color-countries;
+
+    &--heading {
+        @include fontSize-fontWeight-lineHeight-letterSpacing-textTransform($fontSize: 28, $textTransform: capitalize, $letterSpacing: 1.5px, $fontWeight: $font-bold);
+        margin-bottom: 20px;
+    }
+
+    &--searchbar {
+        border:none;
+        border-radius: $br-card;
+        box-shadow: $bs-card;
+        padding: 10px;
+        @include fontSize-fontWeight-lineHeight-letterSpacing-textTransform($fontSize: 16, $textTransform: capitalize, $letterSpacing: 1.5px);
+        margin-bottom: 20px;
+        width:100%;
+    }
+}
+
+.dashboard__countrylist::-webkit-scrollbar {
+    background-color: $border-color;
+    width:6px;
+    border-radius: 3px;
+}
+
+.dashboard__countrylist::-webkit-scrollbar-thumb {
+    background-color: $primary-bg-color;
+    width:5px;
+    border-radius: 30%;
+}

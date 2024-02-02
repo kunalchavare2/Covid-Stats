@@ -1,0 +1,66 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+
+.stats-container {
+  @include grid($columns: 1, $gap: 16px);
+
+  .sc-chart {
+    border-radius: $br-card;
+    box-shadow: $bs-card;
+    height: fit-content;
+    padding: 10px;
+    margin: 2px;
+    height: 100%;
+    overflow: hidden;
+    background-color: $secondary-bg-color;
+
+    canvas {
+      // height: 80%;
+      // aspect-ratio: auto 3 / 2;
+      margin: 0 auto;
+    }
+  }
+
+  .dark {
+    background-color: $secondary-bg-dark-color;
+    color: $primary-text-dark-color;
+  }
+
+  @include media-query($tablet) {
+    & &__piechart {
+      height: 300px;
+      @include flex($justify-content: center);
+    }
+
+    .sc-chart {
+      canvas {
+        width: 100%;
+      }
+    }
+  }
+
+  @include media-query($desktop) {
+    grid-template-columns: repeat(10, 1fr);
+
+    .sc-chart {
+      height: 100%;
+
+      canvas {
+        width: 100%;
+        // height: 80% !important;
+      }
+    }
+
+    &__linegraph {
+      grid-column: auto / span 4;
+    }
+
+    &__bargraph {
+      grid-column: auto / span 4;
+    }
+
+    &__piechart {
+      grid-column: auto / span 2;
+    }
+  }
+}

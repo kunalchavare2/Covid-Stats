@@ -1,0 +1,58 @@
+@import "../../styles/font.scss";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+
+.dashboard__global {
+    border-radius: none;
+    box-shadow: none;
+
+    &--list {
+        @include flex($direction: row,
+            $justify-content: center,
+            $column-gap: 20px,
+            $row-gap: 20px,
+            $wrap: wrap);
+
+    }
+}
+
+.list-item {
+    @include flex($direction: column,
+    );
+    color: $primary-color;
+    border-radius: $br-card;
+    box-shadow: $bs-card;
+    padding: 20px;
+    flex-basis: 45%;
+
+
+    &__label {
+        font-weight: $font-bold;
+        margin-bottom: 10px;
+    }
+
+    &__value {
+        font-weight: $font-medium;
+    }
+
+    @include media-query($tablet) {
+        flex: 1;
+    }
+
+}
+
+.total {
+    background: $total-color;
+}
+
+.recovery {
+    background : $recovery-color;
+}
+
+.deaths {
+    background: $dead-color;
+}
+
+.active-cases {
+    background: $positive-color;
+}

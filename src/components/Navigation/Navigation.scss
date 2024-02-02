@@ -1,0 +1,189 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+
+.header {
+  @include flex(
+    $justify-content: space-between,
+    $align-items: center,
+    $column-gap: 16px,
+    $row-gap: 16px
+  );
+  padding: 10px;
+
+  &__logo {
+    @include flex(
+      $justify-content: space-between,
+      $align-items: center,
+      $column-gap: 10px
+    );
+    color: $primary-text-color;
+    font-weight: $font-semibold;
+
+    img {
+      width: 40px;
+    }
+  }
+  &__content-wrapper {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    background-color: $secondary-bg-color;
+    z-index: 2000;
+    width: 100%;
+
+    &.open {
+      @include flex(
+        $direction: column,
+        $justify-content: center,
+        $align-items: center,
+        $column-gap: 1rem
+      );
+    }
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  &__navlist {
+    @include flex(
+      $direction: column,
+      $justify-content: center,
+      $align-items: center,
+      $column-gap: 1rem
+    );
+  }
+
+  &__navlist li {
+    @include flex(
+      $direction: row,
+      $justify-content: flex-end,
+      $align-items: center
+    );
+  }
+
+  &__navitem {
+    width: 100%;
+    display: block;
+    @include flex(
+      $direction: column,
+      $justify-content: center,
+      $align-items: center
+    );
+    color: $secondary-text-color;
+    font-weight: $font-semibold;
+    padding: 10px;
+    margin: 5px;
+    border-radius: $br-10x;
+    &.active {
+      color: $secondary-text-color;
+      background-color: $secondary-bg-color;
+    }
+
+    &--icon {
+      width: 24px;
+      img {
+        display: none;
+      }
+
+      .mobile-img {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__setting {
+    &--logo {
+      all: unset;
+      font-size: 1.2rem;
+      text-align: center;
+      width: auto;
+      padding: 1rem 0 0 0;
+      cursor: pointer;
+    }
+  }
+
+  &__menu {
+    color: $primary-text-color;
+    font-size: 1.6rem;
+    background-color: transparent;
+    outline: transparent;
+    border: none;
+  }
+
+  &__cancel {
+    font-size: 1.6rem;
+    background-color: transparent;
+    outline: transparent;
+    border: none;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+  }
+
+  @include media-query($desktop) {
+    flex-direction: column;
+
+    &__logo {
+      flex-direction: column;
+      color: $primary-text-color;
+      font-weight: $font-semibold;
+      text-align: center;
+      gap: 5px;
+
+      img {
+        width: 40px;
+      }
+    }
+    &__content-wrapper {
+      position: static;
+      @include flex($direction: column, $align-items: center);
+      background-color: transparent;
+      height: 100%;
+    }
+
+    nav {
+      height: 100%;
+    }
+
+    &__navlist {
+      height: 100%;
+      justify-content: space-evenly;
+
+      & li {
+        width: 100%;
+      }
+    }
+
+    &__navitem {
+      color: $primary-text-color;
+      width: 100%;
+
+      &--icon {
+        width: 24px;
+        img {
+          display: inline-block;
+        }
+
+        .mobile-img {
+          display: none;
+        }
+      }
+    }
+
+    &__setting {
+      &--logo {
+        color: $primary-text-color;
+      }
+    }
+
+    &__menu {
+      display: none;
+    }
+    &__cancel {
+      display: none;
+    }
+  }
+}
