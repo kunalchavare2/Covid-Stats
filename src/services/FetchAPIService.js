@@ -87,6 +87,7 @@ const FetchAPIServiceGraphData = async (apiURL, covidData, year) => {
   }
 };
 
+<<<<<<< HEAD
 const fetchGlobalData = async (apiURL) => {
   try {
     const responce = await axios.get(apiURL, config);
@@ -98,6 +99,8 @@ const fetchGlobalData = async (apiURL) => {
   }
 };
 
+=======
+>>>>>>> 9d5aae59ec828a8fb3ed9b354d57195d4405adf3
 // const result = await FetchAPIServiceGraphData(
 //   "https://disease.sh/v3/covid-19/historical/all?lastdays=all",
 //   "cases",
@@ -105,4 +108,8 @@ const fetchGlobalData = async (apiURL) => {
 // );
 // console.log(result);
 
+<<<<<<< HEAD
 export { FetchAPIService, FetchAPIServiceGraphData, fetchGlobalData };
+=======
+export { FetchAPIService, FetchAPIServiceGraphData };
+>>>>>>> 9d5aae59ec828a8fb3ed9b354d57195d4405adf3

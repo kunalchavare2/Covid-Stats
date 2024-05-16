@@ -49,7 +49,6 @@ const CustomMap = () => {
   const onEachCountry = (country, layer) => {
     const countryName = country.properties.ADMIN;
     layer.bindPopup(countryName);
-
     layer.on({
       click: () => {
         showStates(countryName);
