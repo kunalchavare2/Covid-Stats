@@ -1,0 +1,34 @@
+@import "../../../styles/font.scss";
+@import "../../../styles/partials/functions";
+@import "../../../styles/partials/mixins";
+@import "../../../styles/partials/variables";
+
+.dashboard__countrylist--list .listitem {
+    border:3px solid transparent;
+    padding:5px;
+
+    &__countrydata {
+       @include flex($align-items: center);
+
+       &--countryname {
+        @include fontSize-fontWeight-lineHeight-letterSpacing-textTransform($fontSize: 16, $textTransform: capitalize, $letterSpacing: 1.2px);
+        margin-left: 10px;
+       }
+    }
+
+    &__cases {
+        @include fontSize-fontWeight-lineHeight-letterSpacing-textTransform($fontSize: 12);
+        @include flex($column-gap:5px);
+    }
+}
+
+.accordian {
+    @include flex($direction: row, $align-items:center, $justify-content:space-between);
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+// .listitem:hover {
+//     border : 3px solid $border-color;
+//     border-radius: $br-card;
+// }

@@ -1,0 +1,36 @@
+@import "../../styles/font.scss";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+
+.loading {
+    @include flex($align-items:center, $column-gap:10px, $justify-content:center);
+    height:100%;
+
+    &__circle {
+        width:10px;
+        height:10px;
+        background-color: $primary-bg-color;
+        border-radius: 50%;
+    }
+}
+
+.bubble1 {
+    animation: pulse .4s ease 0s infinite alternate;
+}
+.bubble2 {
+    animation: pulse .4s ease .2s infinite alternate;
+}
+.bubble3 {
+    animation: pulse .4s ease .4s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: .25;
+      transform: scale(.75);
+    }
+  }

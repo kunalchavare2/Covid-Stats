@@ -1,0 +1,37 @@
+@import "../../../styles/partials/functions";
+@import "../../../styles/partials/variables";
+@import "../../../styles/partials/mixins";
+
+.prevention__list--content {
+    width:90%;
+    margin:auto;
+}
+
+.title {
+    @include fontSize-fontWeight-lineHeight-letterSpacing-textTransform($fontSize: 28, $letterSpacing: 1.5px);
+    margin-top:20px;
+}
+
+.underline {
+    height:2px;
+    display:block;
+    width:75px;
+    background: $positive-color;
+    margin: 20px 0;
+}
+
+.description {
+    @include fontSize-fontWeight-lineHeight-letterSpacing-textTransform($fontSize: 16, $lineHeight: 24, $fontWeight: $font-light);
+}
+
+@include media-query($tablet) {
+
+    .prevention__list--content {
+        width:40%;
+    }
+
+    .title {
+        margin-top: 0;
+    }
+
+}

@@ -1,0 +1,15 @@
+@import "../../../styles/partials/variables";
+@import "../../../styles/partials/mixins";
+
+.information__symptoms-table {
+    width:90%;
+    margin:50px auto;
+
+    @include media-query($tablet){
+        width:75%;
+    }
+
+    @include media-query($desktop) {
+        width:60%;
+    }
+}

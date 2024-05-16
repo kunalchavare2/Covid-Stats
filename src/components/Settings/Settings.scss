@@ -1,0 +1,52 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+
+.modal-content {
+  padding-top: 1rem;
+
+  &.dark {
+    color: $primary-text-dark-color;
+    background-color: $primary-bg-dark-color;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+  }
+
+  &__settings {
+    padding: 1rem 0;
+
+    &--wrapper {
+      @include flex($align-items: center, $column-gap: 10px);
+      img {
+        width: 20px;
+      }
+    }
+
+    &--title {
+    }
+
+    &--list {
+      padding-top: 1rem;
+      @include flex($align-items: center, $column-gap: 1rem);
+    }
+
+    &--item {
+      padding: 0.7rem 1.2rem;
+      background-color: blue;
+      border-radius: $br-5x;
+      border: 2px solid $border-color;
+
+      &.theme-light {
+        background-color: $secondary-bg-color;
+      }
+      &.theme-dark {
+        background-color: $secondary-text-color;
+      }
+
+      &.active-theme {
+        border-color: $br-color-green;
+      }
+    }
+  }
+}

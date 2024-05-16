@@ -1,0 +1,17 @@
+@import "./styles/partials/variables";
+@import "./styles/partials/mixins";
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: $primary-bg-color;
+  font-size: 1rem;
+}
+
+.app-container {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include media-query($desktop) {
+    grid-template-columns: 0.1fr 11fr;
+  }
+}

@@ -1,0 +1,61 @@
+@mixin flex(
+  $direction: null,
+  $justify-content: null,
+  $align-items: null,
+  $column-gap: null,
+  $row-gap: null,
+  $wrap:null
+) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  column-gap: $column-gap;
+  row-gap: $row-gap;
+  flex-wrap: $wrap;
+}
+
+@mixin grid(
+  $rows: null,
+  $columns: 12,
+  $gap: null,
+  $row-gap: null,
+  $column-gap: null
+) {
+  display: grid;
+  gap: $gap;
+  row-gap: $row-gap;
+  column-gap: $column-gap;
+  grid-template-rows: null;
+  grid-template-columns: repeat($columns, 1fr);
+}
+
+@mixin fontSize-fontWeight-lineHeight-letterSpacing-textTransform(
+  $fontSize: null,
+  $fontWeight: null,
+  $lineHeight: null,
+  $letterSpacing: null,
+  $textTransform: null
+) {
+  font-size: px-to-rem($fontSize);
+  font-weight: $fontWeight;
+  line-height: px-to-rem($lineHeight);
+  letter-spacing: $letterSpacing;
+  text-transform: $textTransform;
+}
+
+@mixin media-query($device) {
+  @if $device == lg-desktop {
+    @media (min-width: 1600px) {
+      @content;
+    }
+  } @else if $device == desktop {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  } @else if $device == tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+}
