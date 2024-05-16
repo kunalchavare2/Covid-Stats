@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
-<<<<<<< HEAD
 import {
   FetchAPIService,
   fetchGlobalData,
 } from "../../services/FetchAPIService";
-=======
-import { FetchAPIService } from "../../services/FetchAPIService";
->>>>>>> 9d5aae59ec828a8fb3ed9b354d57195d4405adf3
 import { calculateTotal, formatNumber } from "../../services/Statistics";
 import "./globaldata.scss";
 
@@ -19,7 +15,6 @@ function GlobalData() {
   });
 
   useEffect(() => {
-<<<<<<< HEAD
     fetchGlobalData("https://disease.sh/v3/covid-19/all").then((result) => {
       console.log(result);
       setTotals({
@@ -31,23 +26,6 @@ function GlobalData() {
     });
   }, []);
 
-=======
-    FetchAPIService("https://corona.lmao.ninja/v2/countries?yesterday&sort")
-      .then((result) => {
-        setTotals({
-          totalCases: formatNumber(calculateTotal(result, "cases"), 10000000),
-          totalDeaths: formatNumber(calculateTotal(result, "deaths"), 1000000),
-          totalRecovery: formatNumber(calculateTotal(result, "recovered"), 10000000),
-          totalActiveCases: formatNumber(calculateTotal(result, "active"), 10000000),
-        });
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-
-
->>>>>>> 9d5aae59ec828a8fb3ed9b354d57195d4405adf3
   return (
     <ul className="dashboard__global--list">
       <li className="list-item total">
